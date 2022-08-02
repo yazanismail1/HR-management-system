@@ -49,6 +49,7 @@ function generateRandomSalary(employeeLevel) {
         let randomSalary = Math.floor(Math.random() * (max - min + 1) + min);
         return randomSalary;
     }
+    return randomSalary;
 }
 
 // Calculating the net salary //
@@ -154,3 +155,4 @@ outputtingEmployeesObjects(fourthEmployee);
 outputtingEmployeesObjects(fifthEmployee);
 outputtingEmployeesObjects(sixthEmployee);
 outputtingEmployeesObjects(seventhEmployee);
+
