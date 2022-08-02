@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="icon" type="image/x-icon" href="./assets/y-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <title>PAZ MAN</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-logo">
+      <img src="./assets/hr-logo.png" alt="header-logo" />
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li><a class="nav-item" href="./index.html">Home</a></li>
+        <li><a class="nav-item" href="./accounting.html">Accounting</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="management-section">
+      <div class="adding-new-employees">
+        <h2>Adding New Employees</h2>
+        <form action="" class="add-employee-form">
+          <table>
+            <tr>
+              <td>
+                <label for="fullName">Full Name</label>
+              </td>
+              <td class="table-row">
+                <input class="table-row" type="text" name="full-Name" id="fullName" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="departments">Department</label>
+              </td>
+              <td class="table-row">
+                <select name="department-options" id="departments">
+                  <option value="Administration">Administration</option>
+                  <option value="Marketing">Marketing</option>
+                  <option value="Development">Development</option>
+                  <option value="Finance">Development</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="levels">Employee Rank</label>
+              </td>
+              <td class="table-row">
+                <select name="level-options" id="levels">
+                  <option value="Junior">Junior</option>
+                  <option value="Mid-Senior">Mid-Senior</option>
+                  <option value="Senior">Senior</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="imgURL">Profile Picture URL</label>
+              </td>
+              <td class="table-row">
+                <input class="table-row" type="text" name="pfp-url" id="imgURL" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="table-row">
+                <button class="submit-btn">Submit</button>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="search-for-employee">
+        <h2>Search for Employees</h2>
+        <form action="" class="search-employee-form">
+          <table>
+            <tr>
+              <td>
+                <label for="employeeId">Employee ID</label>
+              </td>
+              <td class="table-row">
+                <input class="table-row" type="text" name="employee-id" id="employeeId" /><br />
+              </td>
+            </tr>
+            <td colspan="2" class="table-row">
+              <button class="submit-btn">Search</button>
+            </td>
+          </table>
+        </form>
+      </div>
+    </section>
+    <hr class="management-section-ruler">
+    <section class="employees-cards-section">
+      <h2>Employees</h2>
+      <hr class="employee-text-ruler">
+      <div class="employee-card-main">
+        <div class="inner-employees-cards-section">
+          <div class="test">
+            <img src="./assets/for-hr-management/1.jfif" alt="employee pfp" />
+          </div>
+          <p class="employee-name">Ghazi Samer</p>
+          <p class="to-be-hidden">ID: 1000</p>
+          <p class="to-be-hidden">Department / Administration</p>
+          <p class="to-be-hidden">Senior</p>
+          <p class="to-be-hidden">Salary / 1500 JD</p>
+        </div>
+        <!--More employees cards shall be added from JavaScript-->
+        <div class="inner-employees-cards-section">
+          <div class="test">
+            <img src="./assets/for-hr-management/1.jfif" alt="employee pfp" />
+          </div>
+          <p class="employee-name">Ghazi Samer</p>
+          <p class="to-be-hidden">ID: 1000</p>
+          <p class="to-be-hidden">Department / Administration</p>
+          <p class="to-be-hidden">Senior</p>
+          <p class="to-be-hidden">Salary / 1500 JD</p>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div>
+      <img class="footer-icons-logo" src="./assets/y-logo.png" alt="">
+    </div>
+    <div>
+      <p>&copyCopyright 2022, Yazan Alfarra.</p>
+    </div>
+    <div class="socials">
+
+      <div class="socials-inner">
+        <a href="https://github.com/yazanismail1"><img class="footer-icons" src="./assets/media-pic/github.png"
+            alt=""></a>
+        <p>@yazanismail1</p>
+      </div>
+      <div class="socials-inner">
+        <a href="https://twitter.com/yaz_ism"><img class="footer-icons" src="./assets/media-pic/twitter (2).png"
+            alt=""></a>
+        <p>@yaz_ism</p>
+      </div>
+      <div class="socials-inner">
+        <a href="https://www.linkedin.com/in/yazan-alfarra/"><img class="footer-icons"
+            src="./assets/media-pic/linkedin (3).png" alt=""></a>
+        <p>@yazan-alfarra</p>
+      </div>
+    </div>
+  </footer>
+  <script src="./app.js"></script>
+</body>
+
+</html>
