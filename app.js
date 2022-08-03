@@ -120,3 +120,5 @@ for (let i = 0; i < allEmployees.length; i++){
 for (let j = 0; j < allEmployees.length; j++){
     allEmployees[j].writeToHTML();
 }
+
+alert("Hover over any employee to view his full info");
