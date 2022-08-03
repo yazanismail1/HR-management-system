@@ -21,14 +21,17 @@ function generateRandomId() {
     return randomId;
 }
 
-// Generate Employee IDs for task 08
+// Generate Employee IDs 
 
-function idNumber(add){
-    let startingID = 1000;
-    return startingID + add;
+let startingID = 999;
+function idNumber(){
+    startingID++;
+    return startingID;
 }
 
-// Generate a random salary based on employee level //
+// Generate Employee Salary//
+
+// generate Basic Salary Based on Level
 
 function generateRandomSalary(employeeLevel) {
     let min = 0;
@@ -52,7 +55,7 @@ function generateRandomSalary(employeeLevel) {
     return randomSalary;
 }
 
-// Calculating the net salary //
+// Calculating the net salary 
 
 function afterTaxSalary(level) {
     let salary = generateRandomSalary(level);
@@ -60,99 +63,62 @@ function afterTaxSalary(level) {
     return netSalary;
 }
 
-// Employees Objects //
+// Employees Constructor, Prototype and Objects //
 
-// Employee 01 
+// Employees Constructor
 
-const firstEmployee = {
-    employeeId: function(){return idNumber(0)}, // You can change the inner function to generateRandomId() to get a random ID 
-    fullName: "Ghazi Samer",
-    department: "Administration",
-    level: 'Senior',
-    imageUrl: "www.google.com",
-    salary: function(){return afterTaxSalary(this.level)},
+const allEmployees = [];
+function Employee(fullName, department, level, imageUrl){
+    this.employeeId = function(){return idNumber()}
+    this.fullName = fullName;
+    this.department = department;
+    this.level = level;
+    this.imageUrl = imageUrl;
+    this.salary = function(){return afterTaxSalary(this.level)};
+    allEmployees.push(this);
 }
 
-// Employee 02 
+// Prototype to write in HTML 
 
-const SecondEmployee = {
-    employeeId: function(){return idNumber(1)}, // You can change the inner function to generateRandomId() to get a random ID 
-    fullName: "Lana Ali",
-    department: "Finance",
-    level: 'Senior',
-    imageUrl: "www.google.com",
-    salary: function(){return afterTaxSalary(this.level)},
+Employee.prototype.writeToHTML = function() {
+    document.write(
+        `<div class="inner-employees-cards-section">
+        <div class="test">
+        <img src="${this.imageUrl}" alt="employee pfp" />
+        </div>
+        <p class="employee-name">${this.fullName}</p>
+        <p class="employee-id">ID: ${this.employeeId()}</p>
+        <div class="to-hide">
+        <p class="to-be-hidden">Department / ${this.department}</p>
+        <p class="to-be-hidden">${this.level}</p>
+        <p class="to-be-hidden">Salary / ${this.salary()} JD</p>
+        </div>
+      </div>`)
 }
 
-// Employee 03 
+// Employees Objects
 
-const thirdEmployee = {
-    employeeId: function(){return idNumber(2)}, // You can change the inner function to generateRandomId() to get a random ID 
-    fullName: "Tamara Ayoub",
-    department: "Marketing",
-    level: 'Senior',
-    imageUrl: "www.google.com",
-    salary: function(){return afterTaxSalary(this.level)},
-}
-
-// Employee 04 
-
-const fourthEmployee = {
-    employeeId: function(){return idNumber(3)}, // You can change the inner function to generateRandomId() to get a random ID 
-    fullName: "Safi Walid",
-    department: "Administration",
-    level: 'Mid-Senior',
-    imageUrl: "www.google.com",
-    salary: function(){return afterTaxSalary(this.level)},
-}
-
-// Employee 05
-
-const fifthEmployee = {
-    employeeId: function(){return idNumber(4)}, // You can change the inner function to generateRandomId() to get a random ID 
-    fullName: "Omar Zaid",
-    department: "Development",
-    level: 'Senior',
-    imageUrl: "www.google.com",
-    salary: function(){return afterTaxSalary(this.level)},
-}
-
-// Employee 06
-
-const sixthEmployee = {
-    employeeId: function(){return idNumber(5)}, // You can change the inner function to generateRandomId() to get a random ID 
-    fullName: "Rana Saleh",
-    department: "Development",
-    level: 'Junior',
-    imageUrl: "www.google.com",
-    salary: function(){return afterTaxSalary(this.level)},
-}
-
-// Employee 07
-
-const seventhEmployee = {
-    employeeId: function(){return idNumber(6)}, // You can change the inner function to generateRandomId() to get a random ID 
-    fullName: "Hadi Ahmad",
-    department: "Finance",
-    level: 'Mid-Senior',
-    imageUrl: "www.google.com",
-    salary: function(){return afterTaxSalary(this.level)},
-}
+const ghaziSamer = new Employee("Ghazi Samer", "Administration", "Senior", "./assets/for-hr-management/2.jpg");
+const lanaAli = new Employee("Lana Ali", "Finance", "Senior", "./assets/for-hr-management/4.jpg");
+const tamaraAyoub = new Employee("Tamara Ayoub", "Marketing", "Senior", "./assets/for-hr-management/3.jpg");
+const safiWalid = new Employee("Safi Walid	", "Administration", "Mid-Senior", "./assets/for-hr-management/1.jpg");
+const omarZaid = new Employee("Omar Zaid", "Development", "Senior", "./assets/for-hr-management/5.jpg");
+const ranaSaleh = new Employee("Rana Saleh", "Development", "Senior", "./assets/for-hr-management/3.jpg");
+const hadiAhmad = new Employee("Hadi Ahmad", "Finance", "Mid-Senior", "./assets/for-hr-management/5.jpg");
 
 // Outputting employees objects //
 
-function outputtingEmployeesObjects(object){
-    let name = "Employee name: " + object.fullName;
-    let salary = "Employee Salary: " + object.salary();
-    console.log(name);
-    console.log(salary);
+for (let i = 0; i < allEmployees.length; i++){
+    console.log(`Employee name: ${allEmployees[i].fullName} `);
+    console.log(`Department: ${allEmployees[i].department} `);
+    console.log(`Employee salary: ${allEmployees[i].salary()} `);
+    console.log("-----------------------");
+ }
+
+ // Writing to the HTML //
+
+for (let j = 0; j < allEmployees.length; j++){
+    allEmployees[j].writeToHTML();
 }
 
-outputtingEmployeesObjects(firstEmployee);
-outputtingEmployeesObjects(SecondEmployee);
-outputtingEmployeesObjects(thirdEmployee);
-outputtingEmployeesObjects(fourthEmployee);
-outputtingEmployeesObjects(fifthEmployee);
-outputtingEmployeesObjects(sixthEmployee);
-outputtingEmployeesObjects(seventhEmployee);
-
+alert("Hover over any employee to view his full info");
