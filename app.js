@@ -81,18 +81,20 @@ function Employee(fullName, department, level, imageUrl){
 // Prototype to write in HTML 
 
 Employee.prototype.writeToHTML = function() {
-        document.write(
-            `<div class="inner-employees-cards-section">
-            <div class="test">
-            <img src="${this.imageUrl}" alt="employee pfp" />
-            </div>
-            <p class="employee-name">${this.fullName}</p>
-            <p class="employee-id">ID: ${this.employeeId()}</p>
-            <p class="to-be-hidden">Department / ${this.department}</p>
-            <p class="to-be-hidden">${this.level}</p>
-            <p class="to-be-hidden">Salary / ${this.salary()} JD</p>
-          </div>`)
-    }
+    document.write(
+        `<div class="inner-employees-cards-section">
+        <div class="test">
+        <img src="${this.imageUrl}" alt="employee pfp" />
+        </div>
+        <p class="employee-name">${this.fullName}</p>
+        <p class="employee-id">ID: ${this.employeeId()}</p>
+        <div class="to-hide">
+        <p class="to-be-hidden">Department / ${this.department}</p>
+        <p class="to-be-hidden">${this.level}</p>
+        <p class="to-be-hidden">Salary / ${this.salary()} JD</p>
+        </div>
+      </div>`)
+}
 
 // Employees Objects
 
@@ -109,6 +111,7 @@ const hadiAhmad = new Employee("Hadi Ahmad", "Finance", "Mid-Senior", "./assets/
 for (let i = 0; i < allEmployees.length; i++){
     console.log(`Employee name: ${allEmployees[i].fullName} `);
     console.log(`Department: ${allEmployees[i].department} `);
+    console.log(`Employee salary: ${allEmployees[i].salary()} `);
     console.log("-----------------------");
  }
 
