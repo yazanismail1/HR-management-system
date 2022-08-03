@@ -168,7 +168,6 @@ td {
 	height:fit-content;
 	background-color: #F9F5EB;
 	top: 35px;
-
 	border-radius: 20px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
@@ -198,6 +197,13 @@ td {
 }
 
 .to-be-hidden {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.15;
+	
+}
+
+.employee-id {
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 1.15;
