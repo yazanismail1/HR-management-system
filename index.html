@@ -31,7 +31,7 @@
     <section class="management-section">
       <div class="adding-new-employees">
         <h2>Adding New Employees</h2>
-        <form action="" class="add-employee-form">
+        <form action="" class="add-employee-form" id="newEmployeeForm">
           <table>
             <tr>
               <td>
@@ -50,7 +50,7 @@
                   <option value="Administration">Administration</option>
                   <option value="Marketing">Marketing</option>
                   <option value="Development">Development</option>
-                  <option value="Finance">Development</option>
+                  <option value="Finance">Finance</option>
                 </select>
               </td>
             </tr>
@@ -76,7 +76,7 @@
             </tr>
             <tr>
               <td colspan="2" class="table-row">
-                <button class="submit-btn">Submit</button>
+                <button type="submit" id="subBtn" class="submit-btn" onclick="addNewEmployee()">Submit</button>
               </td>
             </tr>
           </table>
@@ -107,7 +107,7 @@
       <hr class="employee-text-ruler">
       <div class="employee-card-main">
         <!--Employees cards shall be added from JavaScript-->
-        <script src="./app.js"></script>
+        
         
       </div>
       </div>
@@ -140,6 +140,7 @@
       </div>
     </div>
   </footer>
+  <script src="./app.js"></script>
 </body>
 
 </html>
