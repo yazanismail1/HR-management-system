@@ -2,6 +2,22 @@
 
 ## Constructor Submission 
 
+- Refactor the render prototype method to render each employee's information in a separate card on the home page
+- Adding some style to the website.
+
+### Questions to answer
+
+**What observations or questions do you have about what you’ve learned so far?**
+
+JavaScript can go way deep in DOM manipulation.
+
+**How long did it take you to complete this assignment? And, before you started, how long did you think it would take you to complete this assignment?**
+
+This task was quit an easy one, it took the lab time.
+
+
+## Constructor Submission 
+
 - replacing all the literal objects with single constructor function.
 - Adding a render prototype method to add to the HTML.
 - Adding some style to the website.

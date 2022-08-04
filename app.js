@@ -76,24 +76,57 @@ function Employee(fullName, department, level, imageUrl){
     this.imageUrl = imageUrl;
     this.salary = function(){return afterTaxSalary(this.level)};
     allEmployees.push(this);
+    
 }
 
 // Prototype to write in HTML 
 
 Employee.prototype.writeToHTML = function() {
-    document.write(
-        `<div class="inner-employees-cards-section">
-        <div class="test">
-        <img src="${this.imageUrl}" alt="employee pfp" />
-        </div>
-        <p class="employee-name">${this.fullName}</p>
-        <p class="employee-id">ID: ${this.employeeId()}</p>
-        <div class="to-hide">
-        <p class="to-be-hidden">Department / ${this.department}</p>
-        <p class="to-be-hidden">${this.level}</p>
-        <p class="to-be-hidden">Salary / ${this.salary()} JD</p>
-        </div>
-      </div>`)
+    let docElement = document.getElementsByClassName("employee-card-main");
+
+    let firstCont = document.createElement("div");
+    firstCont.setAttribute("class", "inner-employees-cards-section");
+
+    let secondCont = document.createElement("div");
+    secondCont.setAttribute("class", "test");
+    firstCont.appendChild(secondCont);
+
+    let createImg = document.createElement("img");
+    createImg.src = `${this.imageUrl}`;
+    createImg.alt = `employee pfp`;
+    secondCont.appendChild(createImg);
+
+    let employeeNameP = document.createElement("p");
+    employeeNameP.setAttribute("class", "employee-name");
+    employeeNameP.textContent = `${this.fullName}`;
+    firstCont.appendChild(employeeNameP);
+
+    let employeeIdP = document.createElement("p");
+    employeeIdP.setAttribute("class", "employee-id");
+    employeeIdP.textContent = `ID: ${this.employeeId()}`;
+    firstCont.appendChild(employeeIdP);
+
+    let thirdCont = document.createElement("div");
+    thirdCont.setAttribute("class", "to-hide");
+    firstCont.appendChild(thirdCont);
+
+    let employeeDepartmentP = document.createElement("p");
+    employeeDepartmentP.setAttribute("class", "to-be-hidden");
+    employeeDepartmentP.textContent = `Department / ${this.department}`;
+    thirdCont.appendChild(employeeDepartmentP);
+
+    let employeeLevelP = document.createElement("p");
+    employeeLevelP.setAttribute("class", "to-be-hidden");
+    employeeLevelP.textContent = `${this.level}`;
+    thirdCont.appendChild(employeeLevelP);
+
+    let employeeSalaryP = document.createElement("p");
+    employeeSalaryP.setAttribute("class", "to-be-hidden");
+    employeeSalaryP.textContent = `Salary / ${this.salary()} JD`;
+    thirdCont.appendChild(employeeSalaryP);
+    
+    docElement[0].appendChild(firstCont);
+
 }
 
 // Employees Objects
@@ -105,6 +138,19 @@ const safiWalid = new Employee("Safi Walid	", "Administration", "Mid-Senior", ".
 const omarZaid = new Employee("Omar Zaid", "Development", "Senior", "./assets/for-hr-management/5.jpg");
 const ranaSaleh = new Employee("Rana Saleh", "Development", "Senior", "./assets/for-hr-management/3.jpg");
 const hadiAhmad = new Employee("Hadi Ahmad", "Finance", "Mid-Senior", "./assets/for-hr-management/5.jpg");
+
+ // Creating new employee onclick
+
+// document.getElementById("subBtn").addEventListener("submit", addNewEmployee);
+
+// function addNewEmployee() {
+//     let nameOfEmployee = document.getElementById("fullName").elements[0].value;
+//     let departmentOfEmployee = document.getElementById("departments").elements[0].value;
+//     let rankOfEmployee = document.getElementById("levels").elements[0].value;
+//     let imgOfEmployee = document.getElementById("imgURL").elements[0].value;
+
+//    return new Employee(nameOfEmployee, departmentOfEmployee, rankOfEmployee, imgOfEmployee);
+// }
 
 // Outputting employees objects //
 
@@ -120,5 +166,3 @@ for (let i = 0; i < allEmployees.length; i++){
 for (let j = 0; j < allEmployees.length; j++){
     allEmployees[j].writeToHTML();
 }
-
-alert("Hover over any employee to view his full info");
