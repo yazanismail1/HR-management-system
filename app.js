@@ -82,7 +82,7 @@ function Employee(fullName, department, level, imageUrl){
 // Prototype to write in HTML 
 
 Employee.prototype.writeToHTML = function() {
-    let docElement = document.getElementsByClassName("employee-card-main");
+    let docElement = document.getElementById("employeeCARDmain");
 
     let firstCont = document.createElement("div");
     firstCont.setAttribute("class", "inner-employees-cards-section");
@@ -125,19 +125,36 @@ Employee.prototype.writeToHTML = function() {
     employeeSalaryP.textContent = `Salary / ${this.salary()} JD`;
     thirdCont.appendChild(employeeSalaryP);
     
-    docElement[0].appendChild(firstCont);
+    let employeeDeprtmentsAdministration = document.getElementById("administration");
+    let employeeDeprtmentsDevelopment = document.getElementById("development");
+    let employeeDeprtmentsFinance = document.getElementById("finance");
+    let employeeDeprtmentsMarketing = document.getElementById("marketing");
+    
+     if (this.department == "Administration"){
+        let finalDestination = docElement.appendChild(firstCont);
+        employeeDeprtmentsAdministration.appendChild(finalDestination);
+     } else if (this.department == "Development") {
+        let finalDestination = docElement.appendChild(firstCont);
+        employeeDeprtmentsDevelopment.appendChild(finalDestination);
+     } else if (this.department == "Finance") {
+        let finalDestination = docElement.appendChild(firstCont);
+        employeeDeprtmentsFinance.appendChild(finalDestination);
+     } else if (this.department == "Marketing") {
+        let finalDestination = docElement.appendChild(firstCont);
+        employeeDeprtmentsMarketing.appendChild(finalDestination);
+     }
 
 }
 
 // Employees Objects
 
-const ghaziSamer = new Employee("Ghazi Samer", "Administration", "Senior", "./assets/for-hr-management/2.jpg");
-const lanaAli = new Employee("Lana Ali", "Finance", "Senior", "./assets/for-hr-management/4.jpg");
-const tamaraAyoub = new Employee("Tamara Ayoub", "Marketing", "Senior", "./assets/for-hr-management/3.jpg");
-const safiWalid = new Employee("Safi Walid	", "Administration", "Mid-Senior", "./assets/for-hr-management/1.jpg");
-const omarZaid = new Employee("Omar Zaid", "Development", "Senior", "./assets/for-hr-management/5.jpg");
-const ranaSaleh = new Employee("Rana Saleh", "Development", "Senior", "./assets/for-hr-management/3.jpg");
-const hadiAhmad = new Employee("Hadi Ahmad", "Finance", "Mid-Senior", "./assets/for-hr-management/5.jpg");
+const ghaziSamer = new Employee("Ghazi Samer", "Administration", "Senior", "https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Hadi.jpg?raw=true");
+const lanaAli = new Employee("Lana Ali", "Finance", "Senior", "https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Lana.jpg?raw=true");
+const tamaraAyoub = new Employee("Tamara Ayoub", "Marketing", "Senior", "https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Tamara.jpg?raw=true");
+const safiWalid = new Employee("Safi Walid	", "Administration", "Mid-Senior", "https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Safi.jpg?raw=true");
+const omarZaid = new Employee("Omar Zaid", "Development", "Senior", "https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Omar.jpg?raw=true");
+const ranaSaleh = new Employee("Rana Saleh", "Development", "Senior", "https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Tamara.jpg?raw=true");
+const hadiAhmad = new Employee("Hadi Ahmad", "Finance", "Mid-Senior", "https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Hadi.jpg?raw=true");
 
  // Creating new employee onclick
 
