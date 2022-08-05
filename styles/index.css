@@ -3,16 +3,27 @@ body {
 
 }
 
+p {
+	text-align: center;
+}
+
+h3 {
+	
+}
+
 /* Header Section */
 
 header {
 
 	background-color: #F9F5EB ;
 	position: fixed;
+	display:flex;
 	width: 100%;
 	top: 0;
 	z-index: 1;
 	border-bottom: 2px solid #607EAA;
+	justify-content: space-evenly;
+	vertical-align: middle;
 }
 
 .nav-list {
@@ -24,7 +35,7 @@ header {
 .nav-item {
 	text-decoration: none;
 	list-style: none;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 700;
 	color: #1C3879;
 	transition: 0.5s;
@@ -35,25 +46,23 @@ header {
 }
 
 .header-logo img {
-	height: 60px;
-	padding-top: 25px;
+	height: 40px;
+	padding: 13px 0;
 }
 .header-logo, .nav-list {
 	display: flex;
-	justify-content: center;
 }
 
 /* Management Section */
 
 .management-section {
-	margin-top: 150px;
+	margin-top: 75px;
 	top:150px;
 	display: flex;
 	padding: 30px 0;
 	justify-content: center;
 	gap: 175px;
 	flex-wrap: wrap;
-	
 }
 
 @media(max-width: 1150px) {
@@ -166,8 +175,8 @@ td {
 
 .inner-employees-cards-section{
 	position: relative;
-	width: 250px;
-	height:300px;
+	width: 220px;
+	height:260px;
 	background-color: #F9F5EB;
 	top: 35px;
 	border-radius: 20px;
@@ -175,29 +184,33 @@ td {
 	border-top-right-radius: 20px;
 	padding-bottom: 15px;
 	text-align: center;
-	margin-right: 20px;
 	margin-bottom: 20px;
 	overflow: hidden;
 	transition: height 0.7s;
 }
 
 .inner-employees-cards-section:hover{
-	height:370px;
+	height:335px;
 }
 
 .test img{
-	object-fit:scale-down;
-	width: 250px;
-	height: 250px;
+	position: relative;
+	width: 200px;
+	height: 200px;
 	display: flex;
 	justify-content: center;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
 	border-bottom: 3px solid #607EAA;
+	border-radius: 200px;
+}
+
+.test{
+	padding: 10px 0 0 0;
+	display: flex;
+	justify-content: center;
 }
 
 .employee-name {
-	padding: 15px 0 5px;
+	padding: 10px 0 ;
 	font-size: 16px;
 	font-weight: 700;
 	color: #1C3879;
@@ -206,19 +219,22 @@ td {
 .to-be-hidden {
 	font-size: 16px;
 	font-weight: 500;
-	line-height: 1.15;
+	line-height: 1.20;
+	text-align: center;
 }
 
 .to-hide {
 	display: none;
 	position: relative;
-	width: 250px;
+	width: 220px;
 	top: 5px;
 	padding-bottom: 5px;
+	text-align: center;
 }
 
 .to-hide{
 	display: block;
+	text-align: center;
 }
 
 
@@ -228,6 +244,22 @@ td {
 	line-height: 1.15;
 }
 
+.departments-sections {
+	text-align: center;
+	padding: 0;
+	font-size: 16px;
+	font-weight: 700;
+	color: #1C3879;
+}
+
+#employeeCARDmain {
+	gap: 15px;
+	text-align: center;
+}
+
+#marketing, #finance,#development,#administration {
+	padding-top: 30px;
+}
 
 /* Footer Section */
 
