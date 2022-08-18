@@ -63,7 +63,7 @@ function afterTaxSalary(level) {
     return netSalary;
 }
 
-// Employees Constructor, Prototype and Objects //
+// Employees Constructor, Prototype, Objects and Local Storage //
 
 // Employees Constructor
 
@@ -76,10 +76,27 @@ function Employee(fullName, department, level, imageUrl){
     this.imageUrl = imageUrl;
     this.salary = function(){return afterTaxSalary(this.level)};
     allEmployees.push(this);
-    
 }
 
-// Prototype to write in HTML 
+// Local Storage
+
+// function saveToLocalStorage() {
+//     let stringifiedData = JSON.stringify(allEmployees);
+//     localStorage.setItem("Employees", stringifiedData);
+// }
+
+// function getData() {
+//     let data = localStorage.getItem("Employees");
+//     let parseData = JSON.parse(data);
+//     if (parseData !== null) {
+//         for (let i = 0; i < parseData.length; i++){
+//              new Employee(parseData[i].fullName, parseData[i].department, parseData[i].level, parseData[i].imageUrl);
+//         }
+//     }  
+//     renderEmployees();
+// }
+
+// Prototype to write to the HTML 
 
 Employee.prototype.writeToHTML = function() {
     let docElement = document.getElementById("employeeCARDmain");
@@ -146,7 +163,7 @@ Employee.prototype.writeToHTML = function() {
 
 }
 
-// Employees Objects
+// Employees Objects Static Objects
 
 const ghaziSamer = new Employee("Ghazi Samer", "Administration", "Senior", "https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Hadi.jpg?raw=true");
 const lanaAli = new Employee("Lana Ali", "Finance", "Senior", "https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Lana.jpg?raw=true");
@@ -156,20 +173,25 @@ const omarZaid = new Employee("Omar Zaid", "Development", "Senior", "https://git
 const ranaSaleh = new Employee("Rana Saleh", "Development", "Senior", "https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Tamara.jpg?raw=true");
 const hadiAhmad = new Employee("Hadi Ahmad", "Finance", "Mid-Senior", "https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Hadi.jpg?raw=true");
 
- // Creating new employee onclick
+ // Creating new employee object when submitting the form
 
-// document.getElementById("subBtn").addEventListener("submit", addNewEmployee);
+ let form = document.getElementById("newEmployeeForm");
+ form.addEventListener("submit", handleSubmit)
 
-// function addNewEmployee() {
-//     let nameOfEmployee = document.getElementById("fullName").elements[0].value;
-//     let departmentOfEmployee = document.getElementById("departments").elements[0].value;
-//     let rankOfEmployee = document.getElementById("levels").elements[0].value;
-//     let imgOfEmployee = document.getElementById("imgURL").elements[0].value;
+ function handleSubmit(event) {
+    event.preventDefault();
 
-//    return new Employee(nameOfEmployee, departmentOfEmployee, rankOfEmployee, imgOfEmployee);
-// }
+    let fullName = event.target.fullName.value;
+    let departments = event.target.departments.value;
+    let levels = event.target.levels.value;
+    let imgURL = event.target.imgURL.value;
 
-// Outputting employees objects //
+    let newEmployee = new Employee(fullName, departments, levels, imgURL); 
+    newEmployee.writeToHTML();
+    form.reset();
+ }
+
+// Console logging employees objects //
 
 for (let i = 0; i < allEmployees.length; i++){
     console.log(`Employee name: ${allEmployees[i].fullName} `);
@@ -179,7 +201,10 @@ for (let i = 0; i < allEmployees.length; i++){
  }
 
  // Writing to the HTML //
-
+function renderEmployees() {
 for (let j = 0; j < allEmployees.length; j++){
     allEmployees[j].writeToHTML();
+};
 }
+
+renderEmployees();

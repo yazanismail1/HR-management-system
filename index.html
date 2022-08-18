@@ -31,14 +31,14 @@
     <section class="management-section">
       <div class="adding-new-employees">
         <h2>Adding New Employees</h2>
-        <form action="" class="add-employee-form" id="newEmployeeForm">
+        <form class="add-employee-form" id="newEmployeeForm">
           <table>
             <tr>
               <td>
                 <label for="fullName">Full Name</label>
               </td>
               <td class="table-row">
-                <input class="table-row" type="text" name="full-Name" id="fullName" />
+                <input class="table-row" type="text" name="full-Name" id="fullName"  required/>
               </td>
             </tr>
             <tr>
@@ -71,17 +71,18 @@
                 <label for="imgURL">Profile Picture URL</label>
               </td>
               <td class="table-row">
-                <input class="table-row" type="text" name="pfp-url" id="imgURL" />
+                <input class="table-row" type="text" name="pfp-url" id="imgURL" required/>
               </td>
             </tr>
             <tr>
               <td colspan="2" class="table-row">
-                <button type="submit" id="subBtn" class="submit-btn" onclick="addNewEmployee()">Submit</button>
+                <button type="submit" id="subBtn" class="submit-btn">Submit</button>
               </td>
             </tr>
           </table>
         </form>
       </div>
+      <h1>test</h1>
       <div class="search-for-employee">
         <h2>Search for Employees</h2>
         <form action="" class="search-employee-form">
