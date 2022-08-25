@@ -1,5 +1,7 @@
 # HR-management-system
 
+Deployed Site : [HR Management System](https://yazanismail1.github.io/HR-management-system/?full-Name=Yazan&department-options=Finance&level-options=Junior&pfp-url=www)
+
 ## Constructor Submission 
 
 - Refactor the render prototype method to render each employee's information in a separate card on the home page
